@@ -1,2 +1,7 @@
 <h1>Bridges</h1>
-{{ bridges}}
+<button *ngFor="let bridge of bridges" (click)="bridgeSelected.emit(bridge)">Find lights</button>
+<ul *ngIf="ligths">
+    <li *ngFor="let light of lights">
+        Name: {{light.name}}
+    </li>
+</ul>
