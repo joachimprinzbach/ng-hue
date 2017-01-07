@@ -1,7 +1,7 @@
 <h1>Bridges</h1>
 <button *ngFor="let bridge of bridges" (click)="bridgeSelected.emit(bridge)">Find lights for {{bridge.internalipaddress}}</button>
-<ul *ngIf="ligths">
-    <li *ngFor="let light of lights">
-        Name: {{light.name}}
-    </li>
+<ul *ngIf="lights">
+    <ul *ngFor="let light of lights">
+        {{ light.name}}
+    </ul>
 </ul>
