@@ -1,5 +1,6 @@
-<div>
-    <p>Name: {{ light.name}}</p>
-    <p>An: {{light.state.on}}</p>
-    <p>SW Version: {{light.swversion}}</p>
-</div>
+<md-card>
+    <md-card-title>Name: {{ light.name}}</md-card-title>
+    <md-slide-toggle [checked]="light.state.on">
+       Lamp active
+    </md-slide-toggle>
+</md-card>

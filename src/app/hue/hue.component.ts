@@ -4,7 +4,8 @@ import {Light} from "./light/light.model";
 
 @Component({
     selector: 'jh-hue',
-    templateUrl: './hue.component.html'
+    templateUrl: './hue.component.html',
+    styleUrls: ['./hue.component.scss']
 })
 export class HueComponent  {
 

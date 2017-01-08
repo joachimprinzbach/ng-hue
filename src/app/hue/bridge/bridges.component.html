@@ -1,4 +1,4 @@
 <h1>Bridges</h1>
-<button *ngFor="let bridge of bridges" (click)="bridgeSelected.emit(bridge)">Find lights for
+<button md-raised-button color="primary" *ngFor="let bridge of bridges" (click)="bridgeSelected.emit(bridge)">Find lights for
     <jh-bridge [bridge]="bridge"></jh-bridge>
 </button>

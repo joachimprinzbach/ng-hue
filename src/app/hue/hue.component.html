@@ -1,3 +1,8 @@
-<h1>Hue App</h1>
-<jh-bridges (bridgeSelected)="bridgeSelected.emit($event)" [bridges]="bridges"></jh-bridges>
-<jh-lights [lights]="lights"></jh-lights>
+<md-toolbar color="primary">
+    Hue App
+    <span class="app-toolbar-filler"></span>
+</md-toolbar>
+<div class="app-content">
+    <jh-bridges (bridgeSelected)="bridgeSelected.emit($event)" [bridges]="bridges"></jh-bridges>
+    <jh-lights [lights]="lights"></jh-lights>
+</div>
