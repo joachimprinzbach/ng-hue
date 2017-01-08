@@ -15,4 +15,6 @@ export class HueComponent  {
     lights: Light[];
     @Output()
     bridgeSelected: EventEmitter<Bridge> = new EventEmitter();
+    @Output()
+    toggleLightOn: EventEmitter<any> = new EventEmitter();
 }

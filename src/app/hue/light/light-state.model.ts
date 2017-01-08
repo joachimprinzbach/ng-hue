@@ -9,4 +9,5 @@ export interface LightState {
     effect: string;
     colormode: string;
     reachable: boolean;
+    transitiontime: number;
 }

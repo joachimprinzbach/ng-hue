@@ -1,1 +1,1 @@
-<jh-light *ngFor="let light of lights" [light]="light"></jh-light>
+<jh-light *ngFor="let light of lights" [light]="light" (toggleLightOn)="toggleLightOn.emit($event)"></jh-light>

@@ -13,8 +13,17 @@ export function reducer(state = initialState, action: LightActions): State {
     switch (action.type) {
         case LightActionTypes.LOAD_LIGHTS_SUCCESS:
             return Object.assign({}, state, {
-                lights: action.payload,
-            });
+            lights: action.payload,
+        });
+        case LightActionTypes.TOGGLE_LIGHT_ON_SUCCESS:
+            return {
+                lights: state.lights.map(light => {
+                    if (light.modelid === (action.payload as Light).modelid) {
+                        light.state.on = true;
+                    }
+                    return light;
+                })
+            };
         default:
             return state;
     }
