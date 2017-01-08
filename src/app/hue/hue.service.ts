@@ -34,9 +34,10 @@ export class HueService {
     }
 
     toggleLight(light: Light, newState: boolean): Observable<Light> {
-        let lightStateToUpdate: LightState = Object.assign({}, light.state);
-        lightStateToUpdate.on = newState;
-        lightStateToUpdate.transitiontime = 0;
+        let lightStateToUpdate: LightState = {
+            on: newState,
+            transitiontime: 0
+        };
         return this.http
             .put('http://' + this.selectedBridgeIp + '/api/' + this.username + '/lights/' + light.id + '/state', lightStateToUpdate)
             .map(response => response.json());
