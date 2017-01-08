@@ -3,6 +3,7 @@ import {Http} from "@angular/http";
 import {Light} from "./light/light.model";
 import {Observable} from "rxjs";
 import {LightState} from "./light/light-state.model";
+import {Bridge} from "./bridge/bridge.model";
 
 @Injectable()
 export class HueService {
@@ -14,7 +15,7 @@ export class HueService {
     constructor(private http: Http) {
     }
 
-    findBridges(): Observable<Light[]> {
+    findBridges(): Observable<Bridge[]> {
         return this.http
             .get('https://www.meethue.com/api/nupnp')
             .map(response => response.json());
