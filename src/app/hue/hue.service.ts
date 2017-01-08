@@ -9,7 +9,11 @@ import {Bridge} from "./bridge/bridge.model";
 export class HueService {
 
     username: string = 'WBgiileJ7lyApsgJ3OJxdH7Zd6Ioe9VlxfODLgVa';
-    mapFromObjToArray = (obj) => Object.keys(obj).map(key => obj[key]);
+    mapFromObjToArray = (obj) => Object.keys(obj).map(key => {
+        let newObj = obj[key];
+        newObj.id = key;
+        return newObj;
+    })
     selectedBridgeIp: string;
 
     constructor(private http: Http) {
@@ -34,8 +38,7 @@ export class HueService {
         lightStateToUpdate.on = newState;
         lightStateToUpdate.transitiontime = 0;
         return this.http
-        // TODO: currently hard coded id - use the one from the hashMap ;-)
-            .put('http://' + this.selectedBridgeIp + '/api/' + this.username + '/lights/' + 6 + '/state', lightStateToUpdate)
+            .put('http://' + this.selectedBridgeIp + '/api/' + this.username + '/lights/' + light.id + '/state', lightStateToUpdate)
             .map(response => response.json());
     }
 }

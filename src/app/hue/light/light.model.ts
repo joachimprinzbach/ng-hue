@@ -7,4 +7,5 @@ export interface Light {
     manufacturername: string;
     state: LightState;
     uniqueid: string;
+    id: string;
 }
