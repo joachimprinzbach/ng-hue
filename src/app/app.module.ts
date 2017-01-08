@@ -18,6 +18,7 @@ import {BridgeEffects} from "./hue/bridge/bridge.effects";
 import {BridgeComponent} from "./hue/bridge/bridge.component";
 import {LightsComponent} from "./hue/light/lights.component";
 import {BridgesComponent} from "./hue/bridge/bridges.component";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import {BridgesComponent} from "./hue/bridge/bridges.component";
         BridgesComponent
     ],
     imports: [
+        FlexLayoutModule.forRoot(),
         BrowserModule,
         FormsModule,
         HttpModule,

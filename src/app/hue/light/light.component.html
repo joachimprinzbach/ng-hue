@@ -1,6 +1,12 @@
 <md-card>
     <md-card-title>Name: {{ light.name}}</md-card-title>
-    <md-slide-toggle [checked]="light.state.on" (change)="toggleLightOn.emit({light: light, newState: $event.checked})">
-       Lamp active
-    </md-slide-toggle>
+    <md-card-subtitle>
+        <md-slide-toggle [checked]="light.state.on"
+                         (change)="toggleLightOn.emit({light: light, newState: $event.checked})">
+            Toggle On/Off
+        </md-slide-toggle>
+    </md-card-subtitle>
+    <md-card-content>
+        <img class="jh-product-image" [src]="getIcon(light)" />
+    </md-card-content>
 </md-card>
