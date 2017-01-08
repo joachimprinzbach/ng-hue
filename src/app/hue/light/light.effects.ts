@@ -11,8 +11,8 @@ import {of} from "rxjs/observable/of";
 import {Response} from "@angular/http";
 import {HueService} from "../hue.service";
 import {LightActionTypes, LoadLightsAction, LoadLightsSuccessAction, LoadLightsFailAction} from "./light.actions";
-import {Bridge} from "../../models/bridge.model";
 import {Light} from "./light.model";
+import {Bridge} from "../bridge/bridge.model";
 
 @Injectable()
 export class LightEffects {

@@ -15,6 +15,8 @@ import {LightComponent} from "./hue/light/light.component";
 import {LightEffects} from "./hue/light/light.effects";
 import {BridgeEffects} from "./hue/bridge/bridge.effects";
 import {BridgeComponent} from "./hue/bridge/bridge.component";
+import {LightsComponent} from "./hue/light/lights.component";
+import {BridgesComponent} from "./hue/bridge/bridges.component";
 
 @NgModule({
     declarations: [
@@ -22,7 +24,9 @@ import {BridgeComponent} from "./hue/bridge/bridge.component";
         HuePageComponent,
         HueComponent,
         LightComponent,
-        BridgeComponent
+        BridgeComponent,
+        LightsComponent,
+        BridgesComponent
     ],
     imports: [
         BrowserModule,

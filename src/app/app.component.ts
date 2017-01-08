@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: 'jh-root',
-  templateUrl: './app.component.html'
+  template: `<jh-hue-page></jh-hue-page>`
 })
 export class AppComponent {
 

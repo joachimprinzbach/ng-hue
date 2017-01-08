@@ -1,9 +1,3 @@
-<h1>Bridges</h1>
-<button *ngFor="let bridge of bridges" (click)="bridgeSelected.emit(bridge)">Find lights for
-    <jh-bridge [bridge]="bridge"></jh-bridge>
-</button>
-<ul *ngIf="lights">
-    <ul *ngFor="let light of lights">
-        <jh-light [light]="light"></jh-light>
-    </ul>
-</ul>
+<h1>Hue App</h1>
+<jh-bridges (bridgeSelected)="bridgeSelected.emit($event)" [bridges]="bridges"></jh-bridges>
+<jh-lights [lights]="lights"></jh-lights>

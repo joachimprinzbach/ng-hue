@@ -1,7 +1,7 @@
 import {Action} from '@ngrx/store';
 import {Response} from "@angular/http";
 import {Light} from "./light.model";
-import {Bridge} from "../../models/bridge.model";
+import {Bridge} from "../bridge/bridge.model";
 
 export const LightActionTypes = {
     LOAD_LIGHTS: '[Hue] Load Lights',

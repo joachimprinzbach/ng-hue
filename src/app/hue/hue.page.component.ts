@@ -2,9 +2,9 @@ import {NgHueAppState, getBridges, getLights} from "../app-state.reducer";
 import {Component, OnInit} from "@angular/core";
 import {Store} from "@ngrx/store";
 import {Observable} from "rxjs";
-import {Bridge} from "../models/bridge.model";
 import {Light} from "./light/light.model";
 import {LoadLightsAction} from "./light/light.actions";
+import {Bridge} from "./bridge/bridge.model";
 
 @Component({
     selector: 'jh-hue-page',
