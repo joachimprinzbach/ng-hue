@@ -8,14 +8,17 @@ import {Effect, Actions} from "@ngrx/effects";
 import {Action} from "@ngrx/store";
 import {Observable} from "rxjs/Observable";
 import {of} from "rxjs/observable/of";
-import {HueActionTypes, BridgeSearchSuccessAction, BridgeSearchFailAction, BridgeSearchAction} from "./hue.actions";
-import {HueService} from "./hue.service";
-import {Bridge} from "../models/bridge.model";
 import {Response} from "@angular/http";
 import {defer} from "rxjs/observable/defer";
+import {HueService} from "../hue.service";
+import {Bridge} from "./bridge.model";
+import {
+    BridgeActionTypes, BridgeSearchSuccessAction, BridgeSearchFailAction,
+    BridgeSearchAction
+} from "./bridge.actions";
 
 @Injectable()
-export class HueEffects {
+export class BridgeEffects {
 
     constructor(private actions$: Actions, private hueService: HueService) {
     }
@@ -27,7 +30,7 @@ export class HueEffects {
 
     @Effect()
     searchBridges$: Observable<Action> = this.actions$
-        .ofType(HueActionTypes.BRIDGE_SEARCH)
+        .ofType(BridgeActionTypes.BRIDGE_SEARCH)
         .switchMap(() =>
             this.hueService.findBridges()
                 .map((bridges: Bridge[]) => new BridgeSearchSuccessAction(bridges))

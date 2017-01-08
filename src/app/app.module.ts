@@ -9,18 +9,20 @@ import {StoreModule} from "@ngrx/store";
 import {reducer} from "./app-state.reducer";
 import {EffectsModule} from "@ngrx/effects";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
-import {HueEffects} from "./hue/hue.effects";
 import {HuePageComponent} from "./hue/hue.page.component";
 import {HueComponent} from "./hue/hue.component";
 import {LightComponent} from "./hue/light/light.component";
 import {LightEffects} from "./hue/light/light.effects";
+import {BridgeEffects} from "./hue/bridge/bridge.effects";
+import {BridgeComponent} from "./hue/bridge/bridge.component";
 
 @NgModule({
     declarations: [
         AppComponent,
         HuePageComponent,
         HueComponent,
-        LightComponent
+        LightComponent,
+        BridgeComponent
     ],
     imports: [
         BrowserModule,
@@ -29,7 +31,7 @@ import {LightEffects} from "./hue/light/light.effects";
         MaterialModule.forRoot(),
         StoreModule.provideStore(reducer),
         StoreDevtoolsModule.instrumentOnlyWithExtension(),
-        EffectsModule.run(HueEffects),
+        EffectsModule.run(BridgeEffects),
         EffectsModule.run(LightEffects)
     ],
     providers: [

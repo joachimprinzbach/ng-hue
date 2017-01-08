@@ -1,5 +1,5 @@
-import {Bridge} from "../models/bridge.model";
-import {HueActions, HueActionTypes} from "./hue.actions";
+import {BridgeActions, BridgeActionTypes} from "./bridge.actions";
+import {Bridge} from "./bridge.model";
 
 export interface State {
     bridges: Bridge[];
@@ -9,9 +9,9 @@ const initialState: State = {
     bridges: []
 };
 
-export function reducer(state = initialState, action: HueActions): State {
+export function reducer(state = initialState, action: BridgeActions): State {
     switch (action.type) {
-        case HueActionTypes.BRIDGE_SEARCH_SUCCESS:
+        case BridgeActionTypes.BRIDGE_SEARCH_SUCCESS:
             return Object.assign({}, state, {
                 bridges: action.payload,
             });
