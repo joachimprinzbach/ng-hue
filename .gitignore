@@ -10,6 +10,7 @@
 # IDEs and editors
 /.idea/workspace.xml
 /.idea/tasks.xml
+/.idea/shelf
 .project
 .classpath
 .c9/
