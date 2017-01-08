@@ -4,8 +4,6 @@
 </button>
 <ul *ngIf="lights">
     <ul *ngFor="let light of lights">
-        <p>Name: {{ light.name}}</p>
-        <p>An: {{light.state.on}}</p>
-        <p>SW Version: {{light.swversion}}</p>
+        <jh-light [light]="light"></jh-light>
     </ul>
 </ul>

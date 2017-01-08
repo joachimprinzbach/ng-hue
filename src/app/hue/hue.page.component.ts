@@ -3,8 +3,8 @@ import {Component, OnInit} from "@angular/core";
 import {Store} from "@ngrx/store";
 import {Observable} from "rxjs";
 import {Bridge} from "../models/bridge.model";
-import {BridgeSearchAction, LoadLightsAction} from "./hue.actions";
-import {Light} from "../models/light.model";
+import {Light} from "./light/light.model";
+import {LoadLightsAction} from "./light/light.actions";
 
 @Component({
     selector: 'jh-hue-page',

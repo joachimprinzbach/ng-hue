@@ -12,12 +12,15 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {HueEffects} from "./hue/hue.effects";
 import {HuePageComponent} from "./hue/hue.page.component";
 import {HueComponent} from "./hue/hue.component";
+import {LightComponent} from "./hue/light/light.component";
+import {LightEffects} from "./hue/light/light.effects";
 
 @NgModule({
     declarations: [
         AppComponent,
         HuePageComponent,
-        HueComponent
+        HueComponent,
+        LightComponent
     ],
     imports: [
         BrowserModule,
@@ -26,7 +29,8 @@ import {HueComponent} from "./hue/hue.component";
         MaterialModule.forRoot(),
         StoreModule.provideStore(reducer),
         StoreDevtoolsModule.instrumentOnlyWithExtension(),
-        EffectsModule.run(HueEffects)
+        EffectsModule.run(HueEffects),
+        EffectsModule.run(LightEffects)
     ],
     providers: [
         HueService
