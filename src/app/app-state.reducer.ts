@@ -7,7 +7,7 @@ import * as fromBridge from "./hue/bridge/bridge.reducer";
 import * as fromLight from "./hue/light/light.reducer";
 
 export interface NgHueAppState {
-    hue: fromBridge.State;
+    bridge: fromBridge.State;
     light: fromLight.State;
 }
 const reducers = {
@@ -24,7 +24,7 @@ export function reducer(state: any, action: any) {
     }
     return developmentReducer(state, action);
 }
-export const getBridgeState = (state: NgHueAppState) => state.hue;
+export const getBridgeState = (state: NgHueAppState) => state.bridge;
 export const getLightState = (state: NgHueAppState) => state.light;
 export const getBridges = createSelector(getBridgeState, fromBridge.getBridges);
 export const getLights = createSelector(getLightState, fromLight.getLights);

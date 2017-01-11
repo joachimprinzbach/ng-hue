@@ -16,13 +16,13 @@ export class LightComponent  {
     getIcon(light) {
         let model = light.modelid;
         if (model === 'LLC011') {
-            return './../../../assets/img/hue/products/bloom.png';
+            return './../../../assets/img/bridge/products/bloom.png';
         } else if (model === 'LLC010') {
-            return './../../../assets/img/hue/products/iris.png';
+            return './../../../assets/img/bridge/products/iris.png';
         } else if (model === 'LST002') {
-            return './../../../assets/img/hue/products/lightstrip.png';
+            return './../../../assets/img/bridge/products/lightstrip.png';
         } else if (model === 'LCT007') {
-            return './../../../assets/img/hue/products/white_and_color_e27_b22.png';
+            return './../../../assets/img/bridge/products/white_and_color_e27_b22.png';
         }
         return '';
     }
