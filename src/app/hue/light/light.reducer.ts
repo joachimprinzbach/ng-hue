@@ -1,15 +1,15 @@
 import {LightActions, LightActionTypes} from "./light.actions";
 import {Light} from "./light.model";
 
-export interface State {
+export interface LightState {
     lights: Light[];
 }
 
-const initialState: State = {
+const initialState: LightState = {
     lights: []
 };
 
-export function reducer(state = initialState, action: LightActions): State {
+export function reducer(state = initialState, action: LightActions): LightState {
     switch (action.type) {
         case LightActionTypes.LOAD_LIGHTS_SUCCESS:
             return Object.assign({}, state, {
@@ -29,4 +29,4 @@ export function reducer(state = initialState, action: LightActions): State {
     }
 }
 
-export const getLights = (state: State) => state.lights;
+export const getLights = (state: LightState) => state.lights;

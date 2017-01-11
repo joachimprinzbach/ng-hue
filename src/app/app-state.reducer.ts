@@ -3,16 +3,13 @@ import {ActionReducer, combineReducers} from "@ngrx/store";
 import {environment} from "../environments/environment";
 import {compose} from "@ngrx/core/compose";
 import {storeFreeze} from "ngrx-store-freeze";
-import * as fromBridge from "./hue/bridge/bridge.reducer";
-import * as fromLight from "./hue/light/light.reducer";
+import * as fromHue from "./hue/hue.reducer";
 
 export interface NgHueAppState {
-    bridge: fromBridge.State;
-    light: fromLight.State;
+    hue: fromHue.HueState;
 }
 const reducers = {
-    hue: fromBridge.reducer,
-    light: fromLight.reducer
+    hue: fromHue.reducer,
 };
 
 const developmentReducer: ActionReducer<NgHueAppState> = compose(storeFreeze, combineReducers)(reducers);
@@ -24,8 +21,7 @@ export function reducer(state: any, action: any) {
     }
     return developmentReducer(state, action);
 }
-export const getBridgeState = (state: NgHueAppState) => state.bridge;
-export const getLightState = (state: NgHueAppState) => state.light;
-export const getBridges = createSelector(getBridgeState, fromBridge.getBridges);
-export const getLights = createSelector(getLightState, fromLight.getLights);
+const getHueState = (state: NgHueAppState) => state.hue;
+export const getBridges = createSelector(getHueState, fromHue.getBridges);
+export const getLights = createSelector(getHueState, fromHue.getLights);
 

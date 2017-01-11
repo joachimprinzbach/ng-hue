@@ -1,15 +1,15 @@
 import {BridgeActions, BridgeActionTypes} from "./bridge.actions";
 import {Bridge} from "./bridge.model";
 
-export interface State {
+export interface BridgeState {
     bridges: Bridge[];
 }
 
-const initialState: State = {
+const initialState: BridgeState = {
     bridges: []
 };
 
-export function reducer(state = initialState, action: BridgeActions): State {
+export function reducer(state = initialState, action: BridgeActions): BridgeState {
     switch (action.type) {
         case BridgeActionTypes.BRIDGE_SEARCH_SUCCESS:
             return Object.assign({}, state, {
@@ -20,4 +20,4 @@ export function reducer(state = initialState, action: BridgeActions): State {
     }
 }
 
-export const getBridges = (state: State) => state.bridges;
+export const getBridges = (state: BridgeState) => state.bridges;
