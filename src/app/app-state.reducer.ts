@@ -15,7 +15,7 @@ const reducers = {
 const developmentReducer: ActionReducer<NgHueAppState> = compose(storeFreeze, combineReducers)(reducers);
 const productionReducer: ActionReducer<NgHueAppState> = combineReducers(reducers);
 
-export function reducer(state: any, action: any) {
+export function reducer(state: NgHueAppState, action: any) {
     if (environment.production) {
         return productionReducer(state, action);
     }
