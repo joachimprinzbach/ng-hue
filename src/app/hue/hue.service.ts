@@ -1,9 +1,9 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
-import {Light} from "./light/light.model";
+import {Light, LightState} from "./light/light.model";
 import {Observable} from "rxjs";
-import {LightState} from "./light/light-state.model";
 import {Bridge} from "./bridge/bridge.model";
+import {Group} from "./group/group.model";
 
 @Injectable()
 export class HueService {
@@ -29,6 +29,14 @@ export class HueService {
         this.selectedBridgeIp = bridgeIp;
         return this.http
             .get('http://' + bridgeIp + '/api/' + this.username + '/lights')
+            .map(response => response.json())
+            .map(this.mapFromObjToArray);
+    }
+
+    loadGroups(bridgeIp: string): Observable<Group[]> {
+        this.selectedBridgeIp = bridgeIp;
+        return this.http
+            .get('http://' + bridgeIp + '/api/' + this.username + '/groups')
             .map(response => response.json())
             .map(this.mapFromObjToArray);
     }

@@ -24,4 +24,5 @@ export function reducer(state: NgHueAppState, action: any) {
 const getHueState = (state: NgHueAppState) => state.hue;
 export const getBridges = createSelector(getHueState, fromHue.getBridges);
 export const getLights = createSelector(getHueState, fromHue.getLights);
+export const getGroups = createSelector(getHueState, fromHue.getGroups);
 

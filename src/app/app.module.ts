@@ -19,16 +19,21 @@ import {BridgeComponent} from "./hue/bridge/bridge.component";
 import {LightsComponent} from "./hue/light/lights.component";
 import {BridgesComponent} from "./hue/bridge/bridges.component";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {GroupComponent} from "./hue/group/group.component";
+import {GroupsComponent} from "./hue/group/groups.component";
+import {GroupEffects} from "./hue/group/group.effects";
 
 @NgModule({
     declarations: [
         AppComponent,
         HuePageComponent,
         HueComponent,
-        LightComponent,
         BridgeComponent,
+        BridgesComponent,
+        LightComponent,
         LightsComponent,
-        BridgesComponent
+        GroupComponent,
+        GroupsComponent
     ],
     imports: [
         FlexLayoutModule.forRoot(),
@@ -39,7 +44,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
         StoreModule.provideStore(reducer),
         StoreDevtoolsModule.instrumentOnlyWithExtension(),
         EffectsModule.run(BridgeEffects),
-        EffectsModule.run(LightEffects)
+        EffectsModule.run(LightEffects),
+        EffectsModule.run(GroupEffects)
     ],
     providers: [
         HueService
